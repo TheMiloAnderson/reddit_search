@@ -21,7 +21,7 @@ class SearchForm extends Component {
     superagent.get(url)
     .then(res => {
         this.setState({errorClass: ''})
-        this.props.onSearch(res.body);
+        this.props.onSearch(res.body.data.children);
     })
     .catch(error => {
         console.error(error);
